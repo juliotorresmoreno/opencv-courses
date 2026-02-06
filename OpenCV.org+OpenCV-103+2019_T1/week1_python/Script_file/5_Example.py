@@ -62,3 +62,4 @@ while True:
 
 cv2.destroyAllWindows()
 
+## bonito ejemplo
