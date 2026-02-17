@@ -27,7 +27,7 @@ def updateScaleFactor(factor: float):
     global scaleFactor
     global scaleType
 
-    scaleFactor = abs(((1 - scaleType) + (factor / 100.0)) - scaleType)
+    scaleFactor = 1 + ((1 - 2*scaleType) * (factor / 100.0))
 
     if scaleFactor == 0:
         scaleFactor = 0.1
