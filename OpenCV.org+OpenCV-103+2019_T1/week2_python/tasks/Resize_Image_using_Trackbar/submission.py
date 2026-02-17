@@ -29,16 +29,15 @@ def updateScaleFactor(factor: float):
 
     scaleFactor = abs(((1 - scaleType) + (factor / 100.0)) - scaleType)
 
+    if scaleFactor == 0:
+        scaleFactor = 0.1
+
 # Callback functions
 def scaleImage(*args):
     global scaleFactor
     global scaleType
-    
-    # Get the scale factor from the trackbar 
-    updateScaleFactor(args[0])
 
-    if scaleFactor == 0:
-        scaleFactor = 0.1
+    updateScaleFactor(args[0])
     
     # Resize the image
     render()
@@ -50,10 +49,6 @@ def scaleTypeImage(*args):
     scaleType = args[0]
     
     updateScaleFactor(scaleFactor)
-
-    # Resize the image
-    if scaleFactor == 0:
-        scaleFactor = 0.1
 
     render()
 
